@@ -1,0 +1,30 @@
+{
+  "name": "cdn",
+  "version": "1.0.0",
+  "description": "Content Delivery Network for static assets",
+  "main": "index.html",
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "serve-node": "npx http-server -p 8000 -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junior-ENSEA/cdn.git"
+  },
+  "keywords": [
+    "cdn",
+    "static",
+    "assets",
+    "hosting",
+    "css",
+    "javascript",
+    "images",
+    "fonts"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Junior-ENSEA/cdn/issues"
+  },
+  "homepage": "https://github.com/Junior-ENSEA/cdn#readme"
+}
