@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN Server - Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Welcome to Simple CDN</h1>
+            <p class="subtitle">A lightweight Content Delivery Network for serving static files</p>
+        </header>
+
+        <main>
+            <section class="features">
+                <h2>Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon">⚡</div>
+                        <h3>Fast Delivery</h3>
+                        <p>Optimized file serving with in-memory caching</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🗜️</div>
+                        <h3>Compression</h3>
+                        <p>Automatic gzip compression for better performance</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🌐</div>
+                        <h3>CORS Support</h3>
+                        <p>Cross-Origin Resource Sharing enabled</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">💾</div>
+                        <h3>Smart Caching</h3>
+                        <p>Browser and server-side caching strategies</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info">
+                <h2>How to Use</h2>
+                <div class="code-block">
+                    <p>1. Place your static files in the <code>public</code> directory</p>
+                    <p>2. Start the server: <code>npm start</code></p>
+                    <p>3. Access files at: <code>http://localhost:8080/path/to/file</code></p>
+                </div>
+            </section>
+
+            <section class="demo">
+                <h2>Demo</h2>
+                <p>This page is being served by the CDN! Click the button below to test JavaScript functionality:</p>
+                <button id="demoBtn" class="demo-button">Click Me!</button>
+                <p id="demoResult" class="demo-result"></p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Simple CDN Server | Built with Node.js</p>
+        </footer>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

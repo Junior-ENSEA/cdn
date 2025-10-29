@@ -1,0 +1,21 @@
+{
+  "name": "simple-cdn",
+  "version": "1.0.0",
+  "description": "A simple Content Delivery Network (CDN) for serving static files",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "cdn",
+    "static-files",
+    "http-server",
+    "cache"
+  ],
+  "author": "Junior-ENSEA",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
