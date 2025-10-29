@@ -1,0 +1,11 @@
+# CNAME Configuration Example
+# 
+# To use a custom domain for your CDN:
+# 1. Rename this file to 'CNAME' (without .example extension)
+# 2. Replace the content with your custom domain (one domain only)
+# 3. Configure your DNS provider to point to GitHub Pages
+#
+# Example content:
+# cdn.yourdomain.com
+
+your-cdn-domain.com

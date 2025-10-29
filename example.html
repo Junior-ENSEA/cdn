@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN Usage Example</title>
+    
+    <!-- Include CSS from CDN -->
+    <link rel="stylesheet" href="https://your-cdn-domain.com/css/style.css">
+    
+    <style>
+        .demo-section {
+            padding: 40px 0;
+        }
+        
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="demo-section">
+            <h1>CDN Usage Example</h1>
+            
+            <div class="card">
+                <h2>Welcome to the CDN Demo</h2>
+                <p>This page demonstrates how to use assets hosted on your CDN.</p>
+                <p>The stylesheet and JavaScript library are loaded from the CDN, providing:</p>
+                <ul>
+                    <li>Faster load times through caching</li>
+                    <li>Reduced server load</li>
+                    <li>Better performance for users worldwide</li>
+                    <li>Easy version management</li>
+                </ul>
+                
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="testCDN()">Test CDN Library</button>
+                    <a href="index.html" class="btn btn-primary">View Asset Catalog</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>How to Use</h2>
+                <p><strong>1. Include the CSS in your HTML head:</strong></p>
+                <pre><code>&lt;link rel="stylesheet" href="https://your-cdn-domain.com/css/style.css"&gt;</code></pre>
+                
+                <p><strong>2. Include the JavaScript before closing body tag:</strong></p>
+                <pre><code>&lt;script src="https://your-cdn-domain.com/js/main.js"&gt;&lt;/script&gt;</code></pre>
+                
+                <p><strong>3. Use CDN utilities in your code:</strong></p>
+                <pre><code>CDN.loadScript('path/to/script.js');
+CDN.loadStylesheet('path/to/style.css');
+CDN.fetchJSON('path/to/data.json').then(data => console.log(data));</code></pre>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include JavaScript from CDN -->
+    <script src="https://your-cdn-domain.com/js/main.js"></script>
+    
+    <script>
+        function testCDN() {
+            if (typeof CDN !== 'undefined') {
+                alert('CDN Library v' + CDN.version + ' is loaded and working!\n\nCheck the browser console for more details.');
+                console.log('CDN Object:', CDN);
+                console.log('Available methods:', Object.keys(CDN));
+            } else {
+                alert('CDN library not loaded. Please check your setup.');
+            }
+        }
+    </script>
+</body>
+</html>
