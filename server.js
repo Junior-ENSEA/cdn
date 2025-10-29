@@ -55,8 +55,10 @@ function getFile(filePath, callback) {
   if (config.cache.enabled && cache.has(filePath)) {
     const cached = cache.get(filePath);
     const stats = cacheStats.get(filePath);
-    stats.count++;
-    stats.lastAccessed = Date.now();
+    if (stats) {
+      stats.count++;
+      stats.lastAccessed = Date.now();
+    }
     
     console.log(`[CACHE HIT] ${filePath}`);
     return callback(null, cached.content, cached.mtime);
@@ -165,12 +167,14 @@ const server = http.createServer((req, res) => {
     const acceptEncoding = req.headers['accept-encoding'] || '';
     
     if (config.compression.enabled && acceptEncoding.includes('gzip')) {
-      headers['Content-Encoding'] = 'gzip';
-      res.writeHead(200, headers);
       zlib.gzip(content, (err, compressed) => {
         if (err) {
+          // If compression fails, send uncompressed without encoding header
+          res.writeHead(200, headers);
           res.end(content);
         } else {
+          headers['Content-Encoding'] = 'gzip';
+          res.writeHead(200, headers);
           res.end(compressed);
         }
       });
@@ -203,21 +207,16 @@ server.on('error', (err) => {
 });
 
 // Graceful shutdown
-process.on('SIGTERM', () => {
+function gracefulShutdown() {
   console.log('\nShutting down gracefully...');
   server.close(() => {
     console.log('Server closed');
     process.exit(0);
   });
-});
+}
 
-process.on('SIGINT', () => {
-  console.log('\nShutting down gracefully...');
-  server.close(() => {
-    console.log('Server closed');
-    process.exit(0);
-  });
-});
+process.on('SIGTERM', gracefulShutdown);
+process.on('SIGINT', gracefulShutdown);
 
 // Export for testing
 module.exports = server;
